@@ -6,10 +6,9 @@
     w-full
     h-full"
   >
-    Home
+    Skills
   </main>
 </template>
 
 <style scoped>
-
 </style>

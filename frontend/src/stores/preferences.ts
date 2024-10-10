@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const usePreferences = defineStore('preferences', {
   state: () => {
     return {
-      userTheme: 'light',
+      userTheme: 'dark',
       userLang: 'pt-BR'
     }
   },
