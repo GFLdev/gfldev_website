@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  /* Change font weight without changing width with title hack */
+  .link_hover {
+    @apply
+    transition-all
+    duration-300
+    hover:font-normal
+    after:content-[attr(title)]
+    after:block
+    after:font-normal
+    after:text-transparent
+    after:overflow-hidden
+    after:invisible
+    after:h-[1px];
+  }
+
+  /* Underline animation left to right */
+  .underline-transition-dark {
+    @apply
+    inline-block
+    relative
+    after:bg-white
+    after:content-['']
+    after:w-0
+    after:h-[1px]
+    after:absolute
+    after:top-full
+    after:left-0
+    after:transition-all
+    after:duration-300
+    hover:after:w-full
+    [&:not(:hover)]:after:left-auto
+    [&:not(:hover)]:after:right-0;
+  }
+
+    .underline-transition-light {
+    @apply
+    inline-block
+    relative
+    after:bg-black
+    after:content-['']
+    after:w-0
+    after:h-[1px]
+    after:absolute
+    after:top-full
+    after:left-0
+    after:transition-all
+    after:duration-300
+    hover:after:w-full
+    [&:not(:hover)]:after:left-auto
+    [&:not(:hover)]:after:right-0;
+  }
+}
